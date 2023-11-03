@@ -1,5 +1,6 @@
 import heapq
 
+
 class PriorityQueue:
 
     def __init__(self, heap=None, max_heap=False):

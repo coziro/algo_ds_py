@@ -1,5 +1,6 @@
 from algo_ds_py import PriorityQueue
 
+
 def test_push_pop_min_heap():
     pq = PriorityQueue()
     pq.push(10)

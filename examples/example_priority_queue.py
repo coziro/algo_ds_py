@@ -1,8 +1,9 @@
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from algo_ds_py import PriorityQueue
+from algo_ds_py import PriorityQueue  # noqa: E402
 
 print('---- min_heap ----')
 pq = PriorityQueue()
