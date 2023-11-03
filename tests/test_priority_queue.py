@@ -44,19 +44,19 @@ def test_get_heap_max_heap():
 def test_float_min_heap():
     pq = PriorityQueue()
     pq.push(1.2)
-    pq.push(3.6)
-    pq.push(2.4)
+    pq.push(1.6)
+    pq.push(1.4)
     assert pq.pop() == 1.2
-    assert pq.pop() == 2.4
-    assert pq.pop() == 3.6
+    assert pq.pop() == 1.4
+    assert pq.pop() == 1.6
 
 def test_float_max_heap():
     pq = PriorityQueue(max_heap=True)
     pq.push(1.2)
-    pq.push(3.6)
-    pq.push(2.4)
-    assert pq.pop() == 3.6
-    assert pq.pop() == 2.4
+    pq.push(1.6)
+    pq.push(1.4)
+    assert pq.pop() == 1.6
+    assert pq.pop() == 1.4
     assert pq.pop() == 1.2
 
 def test_tuple_min_heap():
