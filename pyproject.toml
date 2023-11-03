@@ -3,7 +3,6 @@ name = "algo-ds-py"
 version = "0.1.0"
 description = "Python utilities for data structures and algorithms"
 license = "MIT"
-authors = ["coziro" <https://github.com/coziro>]
 readme = "README.md"
 
 [tool.poetry.dependencies]
