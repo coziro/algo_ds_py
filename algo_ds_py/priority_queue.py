@@ -60,6 +60,7 @@ class PriorityQueue:
     def peek(self) -> Item:
         item = self.heap[0]
         if self.max_heap:
+            # Retrieve original item from ReversedItem
             item = item.item
         return item
 
