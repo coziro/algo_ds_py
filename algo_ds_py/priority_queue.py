@@ -8,7 +8,7 @@ class PriorityQueue:
         self.max_heap = max_heap
         if self.max_heap:
             heap = [-x for x in heap]
-        self.heap = heap
+        self.heap = heap.copy()
         heapq.heapify(self.heap)
 
     def push(self, item):
