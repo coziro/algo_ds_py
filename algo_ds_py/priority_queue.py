@@ -44,7 +44,7 @@ class PriorityQueue:
     def pop(self) -> Item:
         item = heapq.heappop(self.heap)
         if self.max_heap:
-            # Retreve original item from ReversedItem
+            # Retrieve original item from ReversedItem
             item = item.item
         return item
 
