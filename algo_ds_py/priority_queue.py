@@ -15,7 +15,7 @@ class ReversedItem:
     def __eq__(self, other: 'ReversedItem') -> bool:
         return self.item == other.item
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return repr(self.item)
 
 
