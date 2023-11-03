@@ -1,7 +1,7 @@
 import heapq
-from typing import List, Optional
+from typing import Any, List, Optional
 
-Item = int | float
+Item = Any  # int, float, string, tuple, etc.
 
 class PriorityQueue:
 
