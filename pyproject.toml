@@ -2,6 +2,7 @@
 name = "algo-ds-py"
 version = "0.1.0"
 description = "Python utilities for data structures and algorithms"
+authors = ["coziro"]
 license = "MIT"
 readme = "README.md"
 
@@ -19,13 +20,13 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 target-version = "py311"
 line-length = 100
-indent-width = 4
 select = [
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
     "F", # Pyflakes
     "B", # flake9-bugbear
     "I", # isort
+    "N", # pep8 naming
 ]
 
 [tool.ruff.lint.per-file-ignores]
