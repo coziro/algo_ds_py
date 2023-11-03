@@ -6,6 +6,7 @@ def test_push_pop_min_heap():
     pq.push(10)
     pq.push(30)
     pq.push(20)
+    assert pq.peek() == 10
     assert pq.pop() == 10
     assert pq.pop() == 20
     assert pq.pop() == 30
@@ -15,6 +16,7 @@ def test_push_pop_max_heap():
     pq.push(10)
     pq.push(30)
     pq.push(20)
+    assert pq.peek() == 30
     assert pq.pop() == 30
     assert pq.pop() == 20
     assert pq.pop() == 10
@@ -46,6 +48,7 @@ def test_float_min_heap():
     pq.push(1.2)
     pq.push(1.6)
     pq.push(1.4)
+    assert pq.peek() == 1.2
     assert pq.pop() == 1.2
     assert pq.pop() == 1.4
     assert pq.pop() == 1.6
@@ -55,6 +58,7 @@ def test_float_max_heap():
     pq.push(1.2)
     pq.push(1.6)
     pq.push(1.4)
+    assert pq.peek() == 1.6
     assert pq.pop() == 1.6
     assert pq.pop() == 1.4
     assert pq.pop() == 1.2
@@ -64,6 +68,7 @@ def test_tuple_min_heap():
     pq.push((10, 'apple'))
     pq.push((30, 'banana'))
     pq.push((20, 'cherry'))
+    assert pq.peek() == (10, 'apple')
     assert pq.pop() == (10, 'apple')
     assert pq.pop() == (20, 'cherry')
     assert pq.pop() == (30, 'banana')
@@ -73,6 +78,7 @@ def test_tuple_max_heap():
     pq.push((10, 'apple'))
     pq.push((30, 'banana'))
     pq.push((20, 'cherry'))
+    assert pq.peek() == (30, 'banana')
     assert pq.pop() == (30, 'banana')
     assert pq.pop() == (20, 'cherry')
     assert pq.pop() == (10, 'apple')
@@ -82,6 +88,7 @@ def test_string_min_heap():
     pq.push('apple')
     pq.push('cherry')
     pq.push('banana')
+    assert pq.peek() == 'apple'
     assert pq.pop() == 'apple'
     assert pq.pop() == 'banana'
     assert pq.pop() == 'cherry'
@@ -91,6 +98,7 @@ def test_string_max_heap():
     pq.push('apple')
     pq.push('cherry')
     pq.push('banana')
+    assert pq.peek() == 'cherry'
     assert pq.pop() == 'cherry'
     assert pq.pop() == 'banana'
     assert pq.pop() == 'apple'

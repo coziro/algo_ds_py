@@ -56,3 +56,9 @@ class PriorityQueue:
             return [x.item for x in self.heap]
         else:
             return self.heap
+
+    def peek(self) -> Item:
+        item = self.heap[0]
+        if self.max_heap:
+            item = item.item
+        return item
