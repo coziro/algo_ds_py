@@ -4,11 +4,14 @@ class PriorityQueue:
 
     def __init__(self, heap=None, max_heap=False):
         if heap is None:
-            heap = []
+            self.heap = []
+        else:
+            self.heap = heap.copy()
+
         self.max_heap = max_heap
         if self.max_heap:
-            heap = [-x for x in heap]
-        self.heap = heap.copy()
+            self.heap = [-x for x in self.heap]
+
         heapq.heapify(self.heap)
 
     def push(self, item):
