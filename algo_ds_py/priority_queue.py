@@ -62,3 +62,13 @@ class PriorityQueue:
         if self.max_heap:
             item = item.item
         return item
+
+    def __repr__(self) -> str:
+        if self.max_heap:
+            items = [x.item for x in self.heap]
+        else:
+            items = self.heap
+        return f'PriorityQueue({items}, max_heap={self.max_heap})'
+
+    def __str__(self) -> str:
+        return self.__repr__()

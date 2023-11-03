@@ -102,3 +102,19 @@ def test_string_max_heap():
     assert pq.pop() == 'cherry'
     assert pq.pop() == 'banana'
     assert pq.pop() == 'apple'
+
+def test_repr_min_head():
+    pq = PriorityQueue([10, 20])
+    assert repr(pq) == 'PriorityQueue([10, 20], max_heap=False)'
+
+def test_repr_max_head():
+    pq = PriorityQueue([10, 20], max_heap=True)
+    assert repr(pq) == 'PriorityQueue([20, 10], max_heap=True)'
+
+def test_str_min_head():
+    pq = PriorityQueue([10, 20])
+    assert str(pq) == 'PriorityQueue([10, 20], max_heap=False)'
+
+def test_str_max_head():
+    pq = PriorityQueue([10, 20], max_heap=True)
+    assert str(pq) == 'PriorityQueue([20, 10], max_heap=True)'
