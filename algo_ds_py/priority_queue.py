@@ -22,11 +22,11 @@ class PriorityQueue:
             item = -item
         return item
 
-    def heap(self):
+    def size(self):
+        return len(self.heap)
+
+    def get_heap(self):
         if self.max_heap:
             return [-x for x in self.heap]
         else:
             return self.heap
-
-    def size(self):
-        return len(self.heap)
