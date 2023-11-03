@@ -1,1 +1,1 @@
-from .PriorityQueue import PriorityQueue
+from .priority_queue import PriorityQueue
