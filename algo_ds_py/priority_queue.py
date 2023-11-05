@@ -25,13 +25,6 @@ class PriorityQueue:
     Attributes:
         heap (List): The underlying heap data structure.
         mex_heap (bool): True for a max-heap, False for a min-heap (default).
-
-    Methods:
-        push(item): Inserts an item into the priority queue.
-        pop(): Remove and returns the highest priority item.
-        peek(): Returns the highest priotiy item without removing it.
-        size(): Returns the number of items in the priority queue.
-        get_heap(): Returns a copy of the item in the heap.
     """
 
     def __init__(
