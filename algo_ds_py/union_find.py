@@ -1,4 +1,4 @@
-# This modue is currently under development and requires additinal optimizations.
+# This module is currently under development and requires additinal optimizations.
 
 class UnionFind:
 
