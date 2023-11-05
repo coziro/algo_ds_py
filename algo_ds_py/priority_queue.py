@@ -23,7 +23,6 @@ class PriorityQueue:
     """A priority queue implementation using a heap.
 
     Attributes:
-        heap (List): The underlying heap data structure.
         mex_heap (bool): True for a max-heap, False for a min-heap (default).
     """
 
@@ -40,13 +39,13 @@ class PriorityQueue:
         """
         self.max_heap = max_heap
         if heap is None:
-            self.heap = []
+            self._heap = []
         else:
             if self.max_heap:
-                self.heap = [ReversedItem(x) for x in heap]
+                self._heap = [ReversedItem(x) for x in heap]
             else:
-                self.heap = heap.copy()
-        heapq.heapify(self.heap)
+                self._heap = heap.copy()
+        heapq.heapify(self._heap)
 
     def push(self, item: Item):
         """Inserts an item into the priority queue.
@@ -56,7 +55,7 @@ class PriorityQueue:
         """
         if self.max_heap:
             item = ReversedItem(item)
-        heapq.heappush(self.heap, item)
+        heapq.heappush(self._heap, item)
 
     def pop(self) -> Item:
         """Remove and returns the highest priority item.
@@ -64,7 +63,7 @@ class PriorityQueue:
         Returns:
             The highest priority item in the priority queue.
         """
-        item = heapq.heappop(self.heap)
+        item = heapq.heappop(self._heap)
         if self.max_heap:
             # Retrieve original item from ReversedItem
             item = item.item
@@ -76,7 +75,7 @@ class PriorityQueue:
         Returns:
             The highest priority item in the priority queue.
         """
-        item = self.heap[0]
+        item = self._heap[0]
         if self.max_heap:
             # Retrieve original item from ReversedItem
             item = item.item
@@ -88,7 +87,7 @@ class PriorityQueue:
         Returns:
             The number of items in the priority queue.
         """
-        return len(self.heap)
+        return len(self._heap)
 
     def get_heap(self) -> List[Item]:
         """Returns a copy of the heap.
@@ -97,15 +96,15 @@ class PriorityQueue:
             a copy of the heap.
         """
         if self.max_heap:
-            return [x.item for x in self.heap]
+            return [x.item for x in self._heap]
         else:
-            return self.heap
+            return self._heap
 
     def __repr__(self) -> str:
         if self.max_heap:
-            items = [x.item for x in self.heap]
+            items = [x.item for x in self._heap]
         else:
-            items = self.heap
+            items = self._heap
         return f'PriorityQueue({items}, max_heap={self.max_heap})'
 
     def __str__(self) -> str:
