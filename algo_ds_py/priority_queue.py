@@ -20,6 +20,19 @@ class ReversedItem:
 
 
 class PriorityQueue:
+    """A priority queue Implementation using a heap.
+
+    Attributes:
+        heap (List): The underlying heap data structure.
+        mex_heap (bool): Tue for a max-heap, False for a min-heap (default).
+
+    Methods:
+        push(item): Inserts an item into the priority queue.
+        pop(): Remove and returns the highest priority item.
+        peek(): Returns the highest priotiy item without removing it.
+        size(): Returns the number of items in the priority queue.
+        get_heap(): Returns a copy of the item in the heap.
+    """
 
     def __init__(
         self,
@@ -48,6 +61,13 @@ class PriorityQueue:
             item = item.item
         return item
 
+    def peek(self) -> Item:
+        item = self.heap[0]
+        if self.max_heap:
+            # Retrieve original item from ReversedItem
+            item = item.item
+        return item
+
     def size(self) -> int:
         return len(self.heap)
 
@@ -56,13 +76,6 @@ class PriorityQueue:
             return [x.item for x in self.heap]
         else:
             return self.heap
-
-    def peek(self) -> Item:
-        item = self.heap[0]
-        if self.max_heap:
-            # Retrieve original item from ReversedItem
-            item = item.item
-        return item
 
     def __repr__(self) -> str:
         if self.max_heap:
