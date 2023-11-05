@@ -22,6 +22,9 @@ class ReversedItem:
 class PriorityQueue:
     """A priority queue implementation using a heap.
 
+    A priority queue implementation that extends the functionality of Python's standard
+    heapq module to support both min-heaps and max-heaps.
+
     Attributes:
         mex_heap (bool): True for a max-heap, False for a min-heap (default).
     """
