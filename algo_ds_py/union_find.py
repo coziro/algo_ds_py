@@ -1,6 +1,7 @@
 # This module is currently under development and requires additinal optimizations.
 
 class UnionFind:
+    """A union find (disjoint set) implementation."""
 
     def __init__(self, size):
         self.size = size
