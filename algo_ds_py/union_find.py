@@ -1,7 +1,12 @@
 # This module is currently under development and requires additinal optimizations.
 
 class UnionFind:
-    """A union find (disjoint set) implementation."""
+    """A union find (disjoint set) implementation.
+
+    Attributes:
+        parent (List[int]): Parent node of each node.
+        rank (List[int]): Rank (depth) of earch node.
+    """
 
     def __init__(self, size):
         self.size = size
