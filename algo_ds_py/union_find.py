@@ -33,6 +33,8 @@ class UnionFind:
     def union(self, x, y):
         """Unites two nodes x and y into the same group.
 
+        Uses union by rank to improve the efficiency.
+
         Args:
             x (int): The first node to unite.
             y (int): The second node to unite.
