@@ -26,7 +26,7 @@ class PriorityQueue:
     heapq module to support both min-heaps and max-heaps.
 
     Attributes:
-        mex_heap (bool): True for a max-heap, False for a min-heap (default).
+        max_heap (bool): True for a max-heap, False for a min-heap (default).
     """
 
     def __init__(
