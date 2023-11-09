@@ -7,7 +7,7 @@ class UnionFind:
         rank (List[int]): A list holding the rank (the height of the tree) for each node.
     """
 
-    def __init__(self, size):
+    def __init__(self, size: int):
         """Initializes the UnionFind instance.
 
         Args:
@@ -17,20 +17,23 @@ class UnionFind:
         self.parent = [i for i in range(self.size)]
         self.rank = [1] * self.size
 
-    def find(self, x):
+    def find(self, x: int) -> int:
         """Finds the roor node of node x.
 
         Uses path compression to improve search efficiency.
 
         Args:
             x (int): Traget node.
+
+        Returns:
+            The index of the root node.
         """
         if x == self.parent[x]:
             return x
         self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
 
-    def union(self, x, y):
+    def union(self, x: int, y: int):
         """Unites two nodes x and y into the same group.
 
         Uses union by rank to improve the efficiency.
@@ -50,11 +53,14 @@ class UnionFind:
                 self.parent[root_y] = root_x
                 self.rank[root_x] += 1
 
-    def same(self, x, y):
+    def same(self, x: int, y: int) -> bool:
         """Determines whether two nodes belong to the samge group.
 
         Args:
             x (int): The first node to check.
             y (int): The second node to check.
+
+        Returns:
+            True if the nodes are in the same group, False othewise.
         """
         return self.find(x) == self.find(y)
