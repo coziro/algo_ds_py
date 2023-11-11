@@ -9,6 +9,7 @@ class UnionFind:
         size (int): The total number of nodes.
         parent (List[int]): A list holding the index of the parent node for each node.
         rank (List[int]): A list holding the rank (the height of the tree) for each node.
+        group_count: Number of groups.
     """
 
     def __init__(self, size: int):
@@ -20,6 +21,7 @@ class UnionFind:
         self.size = size
         self.parent = [i for i in range(self.size)]
         self.rank = [1] * self.size
+        self.group_count = self.size
 
     def find(self, x: int) -> int:
         """Finds the roor node of node x.
@@ -56,6 +58,7 @@ class UnionFind:
             else:
                 self.parent[root_y] = root_x
                 self.rank[root_x] += 1
+            self.group_count -= 1
 
     def same(self, x: int, y: int) -> bool:
         """Determines whether two nodes belong to the samge group.
@@ -81,13 +84,13 @@ class UnionFind:
                 root_list.append(i)
         return root_list
 
-    def group_count(self) -> int:
+    def get_group_count(self) -> int:
         """Return a number of groups.
 
         Returns:
             Number of groups.
         """
-        return len(self.roots())
+        return self.group_count
 
     def all_group_members(self):
         group_members = defaultdict(list)
