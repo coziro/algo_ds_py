@@ -1,3 +1,6 @@
+from typing import List
+
+
 class UnionFind:
     """A union find (disjoint set) implementation.
 
@@ -64,3 +67,15 @@ class UnionFind:
             True if the nodes are in the same group, False othewise.
         """
         return self.find(x) == self.find(y)
+
+    def roots(self) -> List[int]:
+        """Return a list of all root nodes.
+
+        Returns:
+            A list of all root nodes.
+        """
+        root_list = []
+        for i in range(self.size):
+            if self.parent[i] == i:
+                root_list.append(i)
+        return root_list
