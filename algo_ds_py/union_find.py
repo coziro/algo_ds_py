@@ -1,5 +1,6 @@
-from typing import List
 from collections import defaultdict
+from typing import List
+
 
 class UnionFind:
     """A union find (disjoint set) implementation.
