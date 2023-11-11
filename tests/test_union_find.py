@@ -24,4 +24,8 @@ def test_union_find():
     # root
     assert len(uf.roots()) == 2
     assert 1 in uf.roots()
+    # group counts
+    assert uf.group_count() == 2
+    # all group members
+    assert len(uf.all_group_members()) == 2
 

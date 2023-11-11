@@ -1,5 +1,5 @@
 from typing import List
-
+from collections import defaultdict
 
 class UnionFind:
     """A union find (disjoint set) implementation.
@@ -79,3 +79,19 @@ class UnionFind:
             if self.parent[i] == i:
                 root_list.append(i)
         return root_list
+
+    def group_count(self) -> int:
+        """Return a number of groups.
+
+        Returns:
+            Number of groups.
+        """
+        return len(self.roots())
+
+    def all_group_members(self):
+        group_members = defaultdict(list)
+        for n in range(self.size):
+            group_members[self.find(n)].append(n)
+        return group_members
+
+
