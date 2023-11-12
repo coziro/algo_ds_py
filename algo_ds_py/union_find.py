@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import List
+from typing import Dict, List
 
 
 class UnionFind:
@@ -9,7 +9,7 @@ class UnionFind:
         size (int): The total number of nodes.
         parent (List[int]): A list holding the index of the parent node for each node.
         rank (List[int]): A list holding the rank (the height of the tree) for each node.
-        group_count: Number of groups.
+        group_count (int): Number of groups.
     """
 
     def __init__(self, size: int):
@@ -92,7 +92,12 @@ class UnionFind:
         """
         return self.group_count
 
-    def all_group_members(self):
+    def all_group_members(self) -> Dict[int, List[int]]:
+        """Get all group members.
+
+        Returns:
+            all group members.
+        """
         group_members = defaultdict(list)
         for n in range(self.size):
             group_members[self.find(n)].append(n)
