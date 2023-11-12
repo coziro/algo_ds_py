@@ -10,14 +10,14 @@ def test_union_find():
     assert uf.find(0) != uf.find(2)
     assert uf.find(1) == uf.find(2)
     # same
-    assert uf.same(0, 1) is False
-    assert uf.same(0, 2) is False
-    assert uf.same(1, 2) is True
+    assert uf.is_connected(0, 1) is False
+    assert uf.is_connected(0, 2) is False
+    assert uf.is_connected(1, 2) is True
     # root
-    assert len(uf.roots()) == 2
-    assert 1 in uf.roots()
+    assert len(uf.get_roots()) == 2
+    assert 1 in uf.get_roots()
     # group counts
     assert uf.get_group_count() == 2
     # all group members
-    assert len(uf.all_group_members()) == 2
+    assert len(uf.get_group_members()) == 2
 

@@ -60,7 +60,7 @@ class UnionFind:
                 self.rank[root_x] += 1
             self.group_count -= 1
 
-    def same(self, x: int, y: int) -> bool:
+    def is_connected(self, x: int, y: int) -> bool:
         """Determines whether two nodes belong to the same group.
 
         Args:
@@ -72,7 +72,7 @@ class UnionFind:
         """
         return self.find(x) == self.find(y)
 
-    def roots(self) -> List[int]:
+    def get_roots(self) -> List[int]:
         """Return a list of all root nodes.
 
         Returns:
@@ -92,7 +92,7 @@ class UnionFind:
         """
         return self.group_count
 
-    def all_group_members(self) -> Dict[int, List[int]]:
+    def get_group_members(self) -> Dict[int, List[int]]:
         """Get all group members.
 
         Returns:
