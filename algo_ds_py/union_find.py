@@ -24,12 +24,12 @@ class UnionFind:
         self.group_count = self.size
 
     def find(self, x: int) -> int:
-        """Finds the roor node of node x.
+        """Finds the root node of node x.
 
         Uses path compression to improve search efficiency.
 
         Args:
-            x (int): Traget node.
+            x (int): Target node.
 
         Returns:
             The index of the root node.
@@ -61,14 +61,14 @@ class UnionFind:
             self.group_count -= 1
 
     def same(self, x: int, y: int) -> bool:
-        """Determines whether two nodes belong to the samge group.
+        """Determines whether two nodes belong to the same group.
 
         Args:
             x (int): The first node to check.
             y (int): The second node to check.
 
         Returns:
-            True if the nodes are in the same group, False othewise.
+            True if the nodes are in the same group, False otherwise.
         """
         return self.find(x) == self.find(y)
 
