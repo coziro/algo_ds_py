@@ -103,4 +103,9 @@ class UnionFind:
             group_members[self.find(n)].append(n)
         return group_members
 
-
+    def __repr__(self) -> str:
+        group_members = [
+            f'{group}: {members}'
+            for group, members in self.get_group_members().items()
+        ]
+        return '\n'.join(group_members)
