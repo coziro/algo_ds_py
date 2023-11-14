@@ -109,3 +109,6 @@ class UnionFind:
             for group, members in self.get_group_members().items()
         ]
         return '\n'.join(group_members)
+
+    def __str__(self) -> str:
+        return self.__repr__()
