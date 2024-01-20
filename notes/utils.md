@@ -36,8 +36,11 @@ a_matrix = [[0] * m for _ in range(n)]
 # Print Variables
 
 ```python
+def get_type_name(var):
+    return str(type(var)).split("'")[1]
+
 def print_list(symbol, list_):
-    print(f'{symbol}:')
+    print(f'{symbol} ({get_type_name(list_)}):')
     for i, e in enumerate(list_):
         print(f'  {i}: {e}')
 
@@ -45,7 +48,7 @@ def print_var(symbol, value):
     if isinstance(value, list):
         print_list(symbol, value)
     else:
-        print(f'{symbol}: {value}')
+        print(f'{symbol} ({get_type_name(value)}): {value}')
 
 def print_vars(var_name=None):
     if var_name:
