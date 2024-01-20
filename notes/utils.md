@@ -22,6 +22,17 @@ int
 a_list = list(map(int, input().split()))
 ```
 
+# Initialize
+1D list
+```python
+a_list = [0] * n
+```
+
+2D List
+```python
+a_matrix = [[0] * m for _ in range(n)]
+```
+
 # Print Variables
 
 ```python
