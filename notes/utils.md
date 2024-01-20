@@ -38,8 +38,8 @@ a_matrix = [[0] * m for _ in range(n)]
 ```python
 def print_list(symbol, list_):
     print(f'{symbol}:')
-    for e in list_:
-        print(f'  {e}')
+    for i, e in enumerate(list_):
+        print(f'  {i}: {e}')
 
 def print_var(symbol, value):
     if isinstance(value, list):
@@ -51,11 +51,9 @@ def print_vars(var_name=None):
     if var_name:
         if isinstance(var_name, str):
             var_name = [var_name]
-
         for symbol in var_name:
             value = globals()[symbol]
             print_var(symbol, value)
-
     else:
         for symbol, value in globals().items():
             if symbol.startswith('_'):
