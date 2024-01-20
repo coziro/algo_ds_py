@@ -21,3 +21,15 @@ int
 ```python
 a_list = list(map(int, input().split()))
 ```
+
+# Print Variables
+
+```python
+def print_vars():
+    for symbol, value in globals().items():
+        if symbol.startswith('__'):
+            continue
+        if callable(value):
+            continue
+        print(f'{symbol}: {value}')
+```
