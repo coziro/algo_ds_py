@@ -1,6 +1,6 @@
-# 入力
+# Input
 
-## 1変数
+## One Variable
 string
 ```python
 s = input()
@@ -10,14 +10,13 @@ int
 n = int(input())
 ```
 
-## 2変数
+## Two Variables
 int
 ```python
 n, m = map(int, input().split())
 ```
 
-
-## 可変長の変数 (List)
+## Any Number of Variables
 int
 ```python
 a_list = list(map(int, input().split()))
