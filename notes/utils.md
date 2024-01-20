@@ -48,15 +48,16 @@ def print_var(symbol, value):
         print(f'{symbol}: {value}')
 
 def print_vars(var_name=None):
-    if isinstance(var_name, str):
-        var_name = [var_name]
+    if var_name:
+        if isinstance(var_name, str):
+            var_name = [var_name]
 
-    for symbol, value in globals().items():
-        if var_name:
-            for v in var_name:
-                if symbol == v:
-                    print_var(symbol, value)
-        else:
+        for symbol in var_name:
+            value = globals()[symbol]
+            print_var(symbol, value)
+
+    else:
+        for symbol, value in globals().items():
             if symbol.startswith('_'):
                 continue
             elif callable(value):
