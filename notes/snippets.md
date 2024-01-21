@@ -3,34 +3,38 @@
 ## One Variable
 string
 ```python
-s = input()
+S = input()
 ```
 int
 ```python
-n = int(input())
+N = int(input())
 ```
 
 ## Two Variables
 int
 ```python
-n, m = map(int, input().split())
+N, M = map(int, input().split())
 ```
 
 ## Any Number of Variables
 int
 ```python
-a_list = list(map(int, input().split()))
+A = list(map(int, input().split()))
 ```
 
 # Initialize
 1D list
 ```python
-a_list = [0] * n
+init_value = 0
+a_list = [init_value] * n
 ```
 
 2D List
 ```python
-a_matrix = [[0] * m for _ in range(n)]
+init_value = 0
+h = 5
+w = 5
+a_matrix = [[init_value] * w for _ in range(h)]
 ```
 
 # Print Variables
