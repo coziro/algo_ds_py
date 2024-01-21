@@ -23,18 +23,26 @@ class Logger:
 
     def print_vars(
         self, 
-        vars: dict
+        vars: dict,
+        var_names: list = None,
     ):
         if not self.print:
             return
 
-        for symbol, value in vars.items():
-            if symbol.startswith('_'):
-                continue
-            if callable(value):
-                continue
-            else:
+        if var_names:
+            for symbol in var_names:
+                value = vars[symbol]
                 print(f'{symbol}({type(value).__name__}): {value}')
+
+        else:
+            for symbol, value in vars.items():
+                if symbol.startswith('_'):
+                    continue
+                if callable(value):
+                    continue
+                else:
+                    print(f'{symbol}({type(value).__name__}): {value}')
+
 
     def print_global_vars(
         self, 
