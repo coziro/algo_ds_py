@@ -21,9 +21,23 @@ class Logger:
             return
         print(f'-- {title} --')
 
+    def print_var(
+        self,
+        symbol,
+        value,
+        pprint:bool = False
+    ):
+        if pprint and isinstance(value, list):
+            print(f'{symbol} ({type(value).__name__}):')
+            for i, elem in enumerate(value):
+                print(f'  {i}: {elem}')
+        else:
+            print(f'{symbol}({type(value).__name__}): {value}')
+
     def print_vars(
         self, 
         vars: dict,
+        pprint: bool = False,
         var_names: list = None,
     ):
         if not self.print:
@@ -32,7 +46,7 @@ class Logger:
         if var_names:
             for symbol in var_names:
                 value = vars[symbol]
-                print(f'{symbol}({type(value).__name__}): {value}')
+                self.print_var(symbol, value, pprint)
 
         else:
             for symbol, value in vars.items():
@@ -41,12 +55,12 @@ class Logger:
                 if callable(value):
                     continue
                 else:
-                    print(f'{symbol}({type(value).__name__}): {value}')
-
+                    self.print_var(symbol, value, pprint)
 
     def print_global_vars(
         self, 
         header:str = None,
+        pprint:bool = False,
     ) -> None:
         if not self.print:
             return
@@ -54,7 +68,7 @@ class Logger:
         if header:
             self.print_header(header)
 
-        self.print_vars(globals())
+        self.print_vars(globals(), pprint=pprint)
 
     def __repr__(self) -> str:
         return f'Logger (print={self.print})'

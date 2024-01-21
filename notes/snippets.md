@@ -22,14 +22,20 @@ int
 A = list(map(int, input().split()))
 ```
 
+## 2-D List
+string
+```python
+A = [input() for _ in range(H)]
+```
+
 # Initialize
-1D list
+1-D list
 ```python
 init_value = 0
 a_list = [init_value] * n
 ```
 
-2D List
+2-D List
 ```python
 init_value = 0
 h = 5
