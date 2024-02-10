@@ -16,7 +16,7 @@ class Logger:
         pprint: bool=False,
     ) -> None:
         self.print = print
-        self.ppring = pprint
+        self.pprint = pprint
 
     def print_header(
         self,
