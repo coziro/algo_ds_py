@@ -29,7 +29,7 @@ class Logger:
         self,
         title: str
     ) -> None:
-        if print:
+        if self.print:
             print(f'-- {title} --')
 
     def _print_single_var_info(
@@ -68,6 +68,7 @@ class Logger:
     def print_global_vars(
         self,
         header: Optional[str] = None,
+        var_names: Optional[list] = None,
     ) -> None:
         if not self.print:
             return
@@ -75,7 +76,7 @@ class Logger:
         if header:
             self.print_header(header)
 
-        self.print_vars(globals())
+        self.print_vars(globals(), var_names)
 
     def __repr__(self) -> str:
         return f'Logger (print={self.print})'
