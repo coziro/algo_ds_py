@@ -36,7 +36,7 @@ class Logger:
         self,
         symbol: str,
         value: Any,
-    ):
+    ) -> None:
         if self.pprint and isinstance(value, list):
             print(f'{symbol} ({type(value).__name__}):')
             for i, elem in enumerate(value):
@@ -48,7 +48,7 @@ class Logger:
         self,
         var_info: dict,
         var_names: Optional[list] = None,
-    ):
+    ) -> None:
         if not self.print:
             return
 
