@@ -1,10 +1,4 @@
-"""logger
-
-# How to use
-logger = Logger(print=True)
-logger.print_global_vars(header='input')
-logger.print_vars(locals())
-"""
+import inspect
 from typing import Any, Optional
 
 
@@ -31,6 +25,13 @@ class Logger:
     ) -> None:
         if self.print:
             print(f'-- {title} --')
+
+    def print_text(
+        self,
+        text: str,
+    ) -> None:
+        if self.print:
+            print(text)
 
     def _print_single_var_info(
         self,
@@ -76,7 +77,12 @@ class Logger:
         if header:
             self.print_header(header)
 
-        self.print_vars(globals(), var_names)
+        frame = inspect.currentframe()
+        caller_globals = {}
+        if frame is not None and frame.f_back is not None:
+            caller_globals = frame.f_back.f_globals
+
+        self.print_vars(caller_globals, var_names)
 
     def __repr__(self) -> str:
         return f'Logger (print={self.print})'
