@@ -1,4 +1,6 @@
-from src.algo_ds_py import PriorityQueue
+import sys
+sys.path.append('../src')
+from algo_ds_py import PriorityQueue
 
 print('---- min_heap ----')
 pq = PriorityQueue()

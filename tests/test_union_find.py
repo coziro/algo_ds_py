@@ -1,4 +1,4 @@
-from src.algo_ds_py import UnionFind
+from algo_ds_py import UnionFind
 
 def test_union_find():
     uf = UnionFind(3)

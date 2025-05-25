@@ -1,4 +1,6 @@
-from src.algo_ds_py import UnionFind 
+import sys
+sys.path.append('../src')
+from algo_ds_py import UnionFind 
 
 uf = UnionFind(3)
 uf.union(1, 2)

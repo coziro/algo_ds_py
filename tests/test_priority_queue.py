@@ -1,4 +1,4 @@
-from src.algo_ds_py import PriorityQueue
+from algo_ds_py import PriorityQueue
 
 def test_push_pop_min_heap():
     pq = PriorityQueue()
