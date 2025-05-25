@@ -1,5 +1,4 @@
-from algo_ds_py import UnionFind
-
+from src.algo_ds_py import UnionFind
 
 def test_union_find():
     uf = UnionFind(3)
@@ -20,4 +19,3 @@ def test_union_find():
     assert uf.get_group_count() == 2
     # all group members
     assert len(uf.get_group_members()) == 2
-

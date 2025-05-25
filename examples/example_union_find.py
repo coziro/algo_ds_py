@@ -1,9 +1,4 @@
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-
-from algo_ds_py import UnionFind  # noqa: E402
+from src.algo_ds_py import UnionFind 
 
 uf = UnionFind(3)
 uf.union(1, 2)
