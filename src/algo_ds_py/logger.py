@@ -6,31 +6,31 @@ class Logger:
 
     def __init__(
         self,
-        print: bool=False,
+        enabled: bool=False,
         pprint: bool=False,
     ) -> None:
-        self.print = print
+        self.enabled = enabled
         self.pprint = pprint
 
     def print_header(
         self,
         title: str
     ) -> None:
-        if self.print:
+        if self.enabled:
             print(f'---- {title} ----')
 
     def print_subheader(
         self,
         title: str
     ) -> None:
-        if self.print:
+        if self.enabled:
             print(f'-- {title} --')
 
     def print_text(
         self,
         text: str,
     ) -> None:
-        if self.print:
+        if self.enabled:
             print(text)
 
     def _print_single_var_info(
@@ -50,7 +50,7 @@ class Logger:
         var_info: dict,
         var_names: Optional[list] = None,
     ) -> None:
-        if not self.print:
+        if not self.enabled:
             return
 
         if var_names:
@@ -71,7 +71,7 @@ class Logger:
         header: Optional[str] = None,
         var_names: Optional[list] = None,
     ) -> None:
-        if not self.print:
+        if not self.enabled:
             return
 
         if header:
@@ -85,7 +85,7 @@ class Logger:
         self.print_vars(caller_globals, var_names)
 
     def __repr__(self) -> str:
-        return f'Logger (print={self.print})'
+        return f'Logger (enabled={self.enabled})'
 
     def __str__(self) -> str:
         return self.__repr__()
