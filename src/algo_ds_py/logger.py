@@ -1,4 +1,5 @@
 import inspect
+import types
 from typing import Any, Optional
 
 
@@ -63,6 +64,8 @@ class Logger:
                 if symbol.startswith('_'):
                     continue
                 if callable(value):
+                    continue
+                if isinstance(value, types.ModuleType):
                     continue
                 self._print_single_var_info(symbol, value)
 
