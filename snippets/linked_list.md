@@ -15,7 +15,7 @@ def pprint(node: ListNode, max_nodes: int = 10):
     pointer = node
     values = []
     counter = 0
-    while pointer and counter <= max_nodes:
+    while pointer and counter < max_nodes:
         values.append(pointer.val)
         pointer = pointer.next
         counter += 1
