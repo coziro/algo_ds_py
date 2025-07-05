@@ -1,29 +1,57 @@
 # Input
 
-## One Variable
-string
+## One Line
+
+### One Variable
+**string**
 ```python
-S = input()
-```
-int
-```python
-N = int(input())
+# input example: 'hello'
+s = input()
 ```
 
-## Two Variables
-int
+**int**
 ```python
-N, M = map(int, input().split())
+# input example: '42'
+n = int(input())
 ```
 
-## Any Number of Variables
-int
+### Two Variables
+**int**
 ```python
+# input example: '3 5'
+n, m = map(int, input().split())
+```
+
+### Any Number of Variables
+**int**
+```python
+# input example: '1 2 3 4 5'
 A = list(map(int, input().split()))
 ```
 
-## 2-D List
-string
+## Multiple Lines
+**string**
 ```python
-A = [input() for _ in range(H)]
+# input example:
+# 'abc'
+# 'def'
+# 'gfi'
+S = [input() for _ in range(n)]
+```
+
+**int**
+```python
+# input example:
+# '10'
+# '20'
+# '30
+A = [int(input()) for _ in range(n)]
+```
+
+**2-D integer matrix**
+```python
+# input example:
+# '1 2 3'
+# '4 5 6'
+M = [list(map(int, input().split())) for _ in range(h)]
 ```
