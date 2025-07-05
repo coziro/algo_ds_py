@@ -1,4 +1,6 @@
-# Node Class
+# LinkedList
+
+## Node Class
 
 ```python
 class ListNode:
@@ -8,7 +10,7 @@ class ListNode:
         self.next = next
 ```
 
-# Logger
+## Logger
 
 ```python
 def pprint(node: ListNode, max_nodes: int = 10):
